@@ -1,0 +1,141 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.checkout-header {
+    background: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.carrinho-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    padding: 40px 5%;
+}
+
+.itens-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* Estilo do item individual no carrinho */
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-carrinho img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.detalhes-item {
+    flex: 1;
+}
+
+.detalhes-item h4 { margin: 0; font-size: 18px; }
+.detalhes-item p { color: #888; font-size: 14px; }
+
+.preco-item {
+    font-weight: 600;
+    color: #ff69b4;
+}
+
+.resumo-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    height: fit-content;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.resumo-linha {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-finalizar {
+    width: 100%;
+    padding: 15px;
+    background: #000; /* Estilo Nike/Zara: Botão preto é elegante */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-finalizar:hover { background: #333; }
+
+.checkout-header {
+    background: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-voltar {
+    text-decoration: none;
+    color: #ffffff; /* Texto branco */
+    background-color: #1a1a1a; /* Preto fosco elegante */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-voltar:hover {
+    background-color: #000000;
+    /* Aqui entra o detalhe das cores da sua logo no brilho/borda */
+    border-color: #e0559a; /* Rosa da logo */
+    box-shadow: 0 0 15px rgba(224, 85, 154, 0.4); 
+    transform: translateX(-5px); /* Efeito suave de movimento para a esquerda */
+}
+
+/* ESTILO DA LOGO NA TELA DE COMPRAS */
+.logo-texto {
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    margin: 0;
+    background: linear-gradient(to right, #e0559a, #a24bcf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* AJUSTE PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 600px) {
+    .checkout-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+

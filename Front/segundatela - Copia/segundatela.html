@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>StyleMe - Vitrine de Moda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./segundatela.css">
+    <script src="./segundatela.js"></script> </body>
+</html>
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="logo-container">
+        <img src="./imgsegundatela/Logo.png" alt="Logo StyleMe" class="logo-nav">
+        <span class="logo-texto-caligrafico">StyleMe</span>
+    </div>
+
+    <div class="centro-header">
+        <div class="busca-container">
+            <span class="icone-busca">🔍</span>
+            <input type="text" id="input-busca" placeholder="O que você procura?" onkeyup="pesquisarProdutos()">
+        </div>
+        
+        <div class="apoio-links">
+            <a href="./compras.html" class="cart-icon">Carrinho <span id="cart-count">0</span></a>
+            <a href="./cadastroroupa.html" class="btn-busca-foto">Busca por Foto</a>
+        </div>
+    </div>
+
+    <nav class="nav-links">
+        <a href="javascript:void(0)" onclick="filtrarPor('colecao', 'nova')">Nova Coleção</a>
+        <a href="javascript:void(0)" onclick="filtrarPor('genero', 'feminino')">Feminino</a>
+        <a href="javascript:void(0)" onclick="filtrarPor('genero', 'masculino')">Masculino</a>
+        <a href="login.html" class="btn-login-nav">Entrar</a>
+    </nav>
+</header>
+
+    <main class="wrapper-vitrine">
+        
+        <aside class="sidebar-filtros">
+    <h3>Filtros</h3>
+    
+    <div class="filtro-grupo">
+        <label>Categoria</label>
+        <select id="filtro-categoria" onchange="filtrarPor('categoria', this.value)">
+    <option value="todos">Todas</option>
+    <option value="vestidos">Vestidos</option> <option value="camisas">Camisas</option>
+    <option value="calcas">Calças</option>
+    <option value="blusas">Blusas</option> <option value="calcas">Calças</option>
+    <option value="acessorios">Acessórios</option> </select>
+</select>
+    </div>
+
+    <div class="filtro-grupo">
+        <label>Tamanho</label>
+        <div class="tamanhos-opcoes">
+            <button onclick="filtrarPor('tamanho', 'P')">P</button>
+            <button onclick="filtrarPor('tamanho', 'M')">M</button>
+            <button onclick="filtrarPor('tamanho', 'G')">G</button>
+            <button onclick="filtrarPor('tamanho', 'GG')">GG</button>
+        </div>
+    </div>
+    <div class="filtro-grupo">
+    <label>Cores</label>
+    <div class="cores-opcoes">
+        <button class="btn-cor cor-preto" onclick="filtrarPor('cor', 'preto')" title="Preto"></button>
+        <button class="btn-cor cor-branco" onclick="filtrarPor('cor', 'branco')" title="Branco"></button>
+        <button class="btn-cor cor-bege" onclick="filtrarPor('cor', 'bege')" title="Bege"></button>
+        <button class="btn-cor cor-marrom" onclick="filtrarPor('cor', 'marrom')" title="Marrom"></button>
+        <button class="btn-cor cor-azul" onclick="filtrarPor('cor', 'azul')" title="Azul"></button>
+    </div>
+</div>
+
+    <button class="btn-limpar" onclick="filtrarPor('genero', 'todos')">Limpar Filtros</button>
+</aside>
+        <section class="grade-produtos">
+            <div class="header-vitrine">
+                <h2>Nossa Coleção</h2>
+                <p>Mostrando 12 produtos encontrados</p>
+            </div>
+
+            <div class="container-cards" id="lista-produtos">
+    
+    <div class="card-produto" data-genero="feminino" data-colecao="nova"data-tamanho="P" data-categoria="vestidos">
+    <div class="foto-produto">
+        <img src="./imgsegundatela/moda12i.png" alt="Vestido Elegance">
+        <span class="tag-novo">Nova Coleção</span>
+    </div>
+    <div class="info-produto">
+        <p class="categoria-label">Vestidos</p>
+        <h4>Vestido Vintage </h4>
+        <p class="preco">R$ 189,90</p>
+        <button class="btn-adicionar" onclick="adicionarAoCarrinho('Vestido Vintage', 189.90, './imgsegundatela/moda12i.png')">
+            Adicionar ao Carrinho
+        </button>
+    </div>
+</div>
+
+<div class="card-produto" data-genero="masculino" data-tamanho="M"data-categoria="camisas">
+    <div class="foto-produto">
+        <img src="./imgsegundatela/Gemini_Generated_Image_39u79v39u79v39u7.png" alt="Polo Retro">
+    </div>
+    <div class="info-produto">
+        <p class="categoria-label">Camisas</p>
+        <h4>Polo</h4>
+        <p class="preco">R$ 120,00</p>
+        <button class="btn-adicionar" onclick="adicionarAoCarrinho('Polo', 120.00, './imgsegundatela/Gemini_Generated_Image_39u79v39u79v39u7.png')">
+            Adicionar ao Carrinho
+        </button>
+    </div>
+</div>
+
+<div class="card-produto" data-genero="feminino" data-tamanho="G">
+    <div class="foto-produto">
+        <img src="./imgsegundatela/roupafeminicamiseta.png" alt="Look Vintage">
+    </div>
+    <div class="info-produto">
+        <p class="categoria-label">Feminino</p>
+        <h4>Conjunto Vintage 50's</h4>
+        <p class="preco">R$ 245,00</p>
+        <button class="btn-adicionar" onclick="adicionarAoCarrinho('Conjunto Vintage 50s', 245.00, './imgsegundatela/roupafeminicamiseta.png')">
+            Adicionar ao Carrinho
+        </button>
+    </div>
+</div>
+
+    <div class="card-produto">
+        <div class="foto-produto">
+            <img src="./imgsegundatela/ConjuntoVintagefemi.png" alt="Look Vintage" data-tamanho="GG">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Feminino</p>
+            <h4>Conjunto Vintage 50's</h4>
+            <p class="preco">R$ 245,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Look Vintage', 120.00, './imgsegundatela/ConjuntoVintagefemi.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto"data-categoria="acessorios">
+        <div class="foto-produto">
+            <img src="./imgsegundatela/chapeubho.png" alt="Chapéu Boho">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Acessórios</p>
+            <h4>Chapéu Boho Summer</h4>
+            <p class="preco">R$ 89,90</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Chapéu Boho Summer', 120.00, './imgsegundatela/chapeubho.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto"data-categoria="Blusas" data-cor="marrom">
+        <div class="foto-produto">
+            <img src="./imgsegundatela/jaqueta.png" alt="Jaqueta Suede">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Casacos</p>
+            <h4>Jaqueta Suede Western</h4>
+            <p class="preco">R$ 310,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Jaqueta Suede', 120.00, './imgsegundatela/jaqueta.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto"data-genero="masculino" data-tamanho="G"data-categoria="camisas">
+        <div class="foto-produto">
+            <img src="./imgsegundatela/tshirtiz.png" alt="Camisa">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Streetwear</p>
+            <h4>T-shirt Oversized Urban</h4>
+            <p class="preco">R$ 75,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('T-shirt Oversized Urban', 120.00, './imgsegundatela/tshirtiz.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto"data-categoria="calcas" data-tamanho="G" data-genero="masculino">
+        <div class="foto-produto">
+            <img src="./imgsegundatela/calçatshit.png" alt="Calça">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Calças</p>
+            <h4>Calça Cargo Khaki</h4>
+            <p class="preco">R$ 159,90</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Calça Cargo Khaki', 120.00, './imgsegundatela/calçatshit.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto"data-genero="feminino" data-colecao="nova"data-tamanho="P" data-categoria="camisas"data-cor="azul">
+        <div class="foto-produto">
+            <img src="./imgsegundatela/blaze.png" alt="Formal">
+            <span class="tag-novo">Promoção</span>
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Formal</p>
+            <h4>Blazer Slim Fit</h4>
+            <p class="preco">R$ 299,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Blazer Slim Fit', 120.00, './imgsegundatela/blaze.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto"data-categoria="acessorios"data-genero="feminino">
+        <div class="foto-produto">
+            <img src="./imgsegundatela/oculos.png" alt="Óculos">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Acessórios</p>
+            <h4>Óculos Retro Cat-Eye</h4>
+            <p class="preco">R$ 115,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Polo Listrada', 120.00, './imgsegundatela/oculos.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto">
+        <div class="foto-produto">
+            <img src="../img/moda7.png" alt="Jeans">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Jeans</p>
+            <h4>Calça Jeans Wide Leg</h4>
+            <p class="preco">R$ 139,90</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Polo Listrada', 120.00, '../img/moda8.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto">
+        <div class="foto-produto">
+            <img src="../img/moda3.png" alt="Inverno">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Casacos</p>
+            <h4>Sobretudo Soft Wool</h4>
+            <p class="preco">R$ 450,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Polo Listrada', 120.00, '../img/moda8.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto">
+        <div class="foto-produto">
+            <img src="../img/moda8.png" alt="Sport">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Sport</p>
+            <h4>Conjunto Jogger Tech</h4>
+            <p class="preco">R$ 198,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Polo Listrada', 120.00, '../img/moda8.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto">
+        <div class="foto-produto">
+            <img src="../img/moda12.png" alt="Saia">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Saias</p>
+            <h4>Saia Midi Plissada</h4>
+            <p class="preco">R$ 110,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Polo Listrada', 120.00, '../img/moda8.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto">
+        <div class="foto-produto">
+            <img src="../img/moda7.png" alt="Tricot">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Malhas</p>
+            <h4>Suéter Tricot Pastel</h4>
+            <p class="preco">R$ 145,00</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Polo Listrada', 120.00, '../img/moda8.png')">
+    Adicionar ao Carrinho
+</button>
+        </div>
+    </div>
+
+    <div class="card-produto">
+        <div class="foto-produto">
+            <img src="../img/moda6.png" alt="Sapato">
+        </div>
+        <div class="info-produto">
+            <p class="categoria-label">Calçados</p>
+            <h4>Bota Couro Ecológico</h4>
+            <p class="preco">R$ 289,90</p>
+            <button class="btn-adicionar" onclick="adicionarAoCarrinho('Polo Listrada', 120.00, '../img/moda8.png')">
+    Adicionar ao Carrinho
+</button>
+     

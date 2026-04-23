@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>StyleMe - Busca Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./cadastrodroupa.css"> </head>
+<body>
+
+    <div class="container-busca-ia">
+        <header class="header-busca">
+            <a href="./segundatela.html" class="voltar">← Voltar</a>
+            <h1>Busca Visual Inteligente</h1>
+            <p>Tire uma foto ou suba um arquivo para encontrarmos peças semelhantes.</p>
+        </header>
+
+        <main class="area-upload-ia">
+            <div class="camera-box" id="area-scanner">
+                <div class="linha-scanner"></div> <img src="../img/placeholder-camera.png" id="preview-foto" alt="Sua foto aparecerá aqui">
+            </div>
+
+            <div class="controles-busca">
+                <label for="arquivo-foto" class="btn-upload">Selecionar Imagem</label>
+                <input type="file" id="arquivo-foto" accept="image/*" style="display:none">
+                <button id="btn-analisar" class="btn-confirmar">Buscar Similares</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

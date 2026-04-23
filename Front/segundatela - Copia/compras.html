@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>StyleMe - Minha Sacola</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./compras.css">
+</head>
+<body>
+
+    <header class="checkout-header">
+        <a href="segundatela.html" class="btn-voltar">← Continuar Comprando</a>
+        <h1 class="logo-texto">StyleMe</h1>
+    </header>
+
+    <main class="carrinho-wrapper">
+        <section class="itens-container">
+            <h2>Sua Sacola</h2>
+            <div id="lista-vazia" style="display: none;">
+                <p>Sua sacola está vazia. Que tal escolher algo lindo?</p>
+            </div>
+            <div id="carrinho-lista">
+                </div>
+        </section>
+
+        <aside class="resumo-container">
+            <h3>Resumo do Pedido</h3>
+            <div class="resumo-linha">
+                <span>Subtotal</span>
+                <span id="subtotal">R$ 0,00</span>
+            </div>
+            <div class="resumo-linha">
+                <span>Frete</span>
+                <span class="frete-gratis">GRÁTIS</span>
+            </div>
+            <hr>
+            <div class="resumo-linha total">
+                <span>Total</span>
+                <span id="total-final">R$ 0,00</span>
+            </div>
+
+            <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+
+            <div class="pagamentos-detalhados">
+                <h4>Forma de Pagamento</h4>
+                
+                <div class="opcoes-pagamento">
+                    <label class="pagamento-item">
+                        <input type="radio" name="metodo-pagamento" value="pix" checked>
+                        <span class="icone-pagamento">⚡</span>
+                        <div class="texto-pagamento">
+                            <strong>Pix</strong>
+                            <span>Aprovação instantânea</span>
+                        </div>
+                    </label>
+
+                    <label class="pagamento-item">
+                        <input type="radio" name="metodo-pagamento" value="cartao">
+                        <span class="icone-pagamento">💳</span>
+                        <div class="texto-pagamento">
+                            <strong>Cartão de Crédito</strong>
+                            <span>Até 10x sem juros</span>
+                        </div>
+                    </label>
+
+                    <label class="pagamento-item">
+                        <input type="radio" name="metodo-pagamento" value="boleto">
+                        <span class="icone-pagamento">📄</span>
+                        <div class="texto-pagamento">
+                            <strong>Boleto</strong>
+                            <span>Vence em 2 dias úteis</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="pagamentos-icones">
+                <p>🔒 Checkout Seguro StyleMe</p>
+            </div>
+        </aside>
+    </main>
+
+    <script src="./compras.js"></script>
+</body>
+</html>

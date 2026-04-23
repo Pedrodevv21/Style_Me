@@ -1,0 +1,179 @@
+/* =========================================
+   1. CONFIGURAÇÃO GERAL E LAYOUT
+   ========================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff5f8; 
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+.wrapper-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================================
+   2. ESTILO DA LOGO E TEXTOS (IDENTIDADE)
+   ========================================= */
+.form-header-with-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo-empresa {
+    max-width: 130px;
+    margin-bottom: 10px;
+}
+
+.title-main {
+    margin: 0;
+    font-size: 38px;
+    font-family: 'Great Vibes', cursive;
+    background: linear-gradient(to right, #e0559a 0%, #a24bcf 40%, #c4943f 100%);
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.title-sub {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #888;
+}
+
+/* =========================================
+   3. CONTAINER DO FORMULÁRIO
+   ========================================= */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 350px; 
+    text-align: center;
+    position: relative;
+    z-index: 100;
+}
+
+input {
+    width: 100%;
+    padding: 12px; /* Reduzi levemente o padding */
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+    background-color: #fafafa;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-size: 14px; /* TAMANHO REDUZIDO: igual ao cadastro */
+}
+
+input:focus {
+    border-color: #ff69b4;
+}
+
+button {
+    width: 100%;
+    padding: 12px; /* Reduzi levemente o padding */
+    background-color: #ff6eb4; 
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px; /* TAMANHO REDUZIDO: igual ao cadastro */
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e0559a;
+}
+
+/* LINK DE LOGIN / CADASTRO */
+.link-login {
+    margin-top: 20px;
+    font-size: 14px; /* TAMANHO REDUZIDO: igual ao cadastro */
+}
+
+.link-login p {
+    color: #666;
+    margin: 0;
+}
+
+.link-login a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-login a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   4. CARROSSEL ROTATIVO (IMAGENS)
+   ========================================= */
+.coluna-decoracao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.esq { left: -150px; } 
+.dir { right: -150px; }
+
+.img-decoracao {
+    width: 250px; 
+    height: 450px; 
+    overflow: hidden; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    filter: brightness(1.05) contrast(1.1) saturate(1.2);
+    opacity: 0.8; 
+    transition: 0.5s;
+    background-color: #fff;
+}
+
+.img-decoracao img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ANIMAÇÕES */
+.animar-fluxo { animation: carrosselEsquerda 10s linear infinite; }
+.animar-fluxo-inverso { animation: carrosselDireita 10s linear infinite; }
+
+.img-decoracao:nth-child(2) { animation-delay: 2s; }
+.img-decoracao:nth-child(3) { animation-delay: 4s; }
+
+@keyframes carrosselEsquerda {
+    0% { transform: translateX(0); opacity: 0; }
+    15% { opacity: 0.8; }
+    85% { opacity: 0.8; }
+    100% { transform: translateX(450px); opacity: 0; }
+}
+
+@keyframes carrosselDireita {
+    0% { transform: translateX(0); opacity: 0; }
+    15% { opacity: 0.8; }
+    85% { opacity: 0.8; }
+    100% { transform: translateX(-450px); opacity: 0; }
+}

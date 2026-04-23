@@ -1,0 +1,409 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #fff5f8; /* Fundo rosado padrão StyleMe */
+    color: #333;
+}
+.navbar {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-nav {
+    height: 45px;
+}
+
+.logo-texto-caligrafico {
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    margin-left: 10px;
+    background: linear-gradient(to right, #e0559a, #a24bcf, #c4943f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff69b4;
+}
+
+.btn-login-nav {
+    background-color: #ff69b4;
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+/* =========================================
+   3. ESTRUTURA PRINCIPAL (GRID)
+   ========================================= */
+.wrapper-vitrine {
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Sidebar fixa e Vitrine flexível */
+    gap: 30px;
+    padding: 40px 5%;
+}
+
+/* =========================================
+   4. SIDEBAR DE FILTROS
+   ========================================= */
+.sidebar-filtros {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    height: fit-content;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-filtros h3 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid #fff5f8;
+    padding-bottom: 10px;
+}
+
+.filtro-grupo {
+    margin-bottom: 25px;
+}
+
+.filtro-grupo label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.tamanhos-opcoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.tamanhos-opcoes button {
+    padding: 8px;
+    border: 1px solid #eee;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tamanhos-opcoes button:hover {
+    border-color: #ff69b4;
+    color: #ff69b4;
+}
+
+.btn-limpar {
+    width: 100%;
+    padding: 12px;
+    background: #f8f8f8;
+    border: none;
+    border-radius: 10px;
+    color: #888;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* =========================================
+   5. VITRINE DE PRODUTOS
+   ========================================= */
+.header-vitrine {
+    margin-bottom: 30px;
+}
+
+.header-vitrine h2 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.header-vitrine p {
+    color: #888;
+}
+
+.container-cards {
+    display: grid;
+    /* Cria colunas automáticas que se ajustam à tela  */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card-produto {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 105, 180, 0.05);
+}
+
+.card-produto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.foto-produto {
+    position: relative;
+    height: 350px;
+    background-color: #f9f9f9;
+}
+
+.foto-produto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tag-novo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ff69b4;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.info-produto {
+    padding: 20px;
+    text-align: center;
+}
+
+.categoria-label {
+    font-size: 11px;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.info-produto h4 {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.preco {
+    font-size: 20px;
+    font-weight: 700;
+    color: #a24bcf; /* Roxo da logo */
+    margin: 5px 0;
+}
+
+.btn-adicionar {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(to right, #e0559a, #a24bcf);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-adicionar:hover {
+    filter: brightness(1.1);
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 900px) {
+    .wrapper-vitrine {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar-filtros {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+/* Configuração Geral do Header */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centraliza o conjunto todo no header */
+    align-items: center;
+    padding: 15px 4%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    flex-wrap: nowrap;
+    gap: 50px; /* DISTÂNCIA ENTRE LOGO / BUSCA / MENU */
+}
+
+.centro-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Removido o flex: 1 daqui */
+}
+
+/* Bloco Central (Busca + Carrinho) */
+.centro-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1; /* Faz esse bloco ocupar o espaço do meio */
+    justify-content: center;
+}
+
+.busca-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.busca-container input {
+    padding: 8px 10px 8px 35px; /* Espaço para a lupa */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 200px;
+}
+
+.icone-busca {
+    position: absolute;
+    left: 12px;
+}
+
+/* Bloco de Links (Carrinho e Busca Foto) */
+.apoio-links {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    white-space: nowrap; /* Evita que o texto quebre */
+}
+
+/* Bloco da Direita (Menu e Botão Entrar) */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 400px;
+    justify-content: flex-end;
+}
+
+.btn-login-nav {
+    background-color: #ff69b4;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+/* Container dos links ao lado da busca */
+.apoio-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 15px;
+}
+
+/* Estilo para Carrinho e Busca por Foto */
+.cart-icon, .btn-busca-foto {
+    text-decoration: none; /* Tira o sublinhado azul */
+    color: #555; /* Cor cinza elegante */
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.cart-icon:hover, .btn-busca-foto:hover {
+    color: #ff69b4; /* Fica rosa ao passar o mouse */
+}
+
+/* O contador do carrinho (o número 1) */
+#cart-count {
+    background-color: #ff69b4;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+/* Ajuste fino na busca para não bater nos links */
+.busca-container {
+    min-width: 250px;
+}
+.cores-opcoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-cor {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; /* Faz ficar redondo */
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.btn-cor:hover {
+    transform: scale(1.2); /* Aumenta um pouco ao passar o mouse */
+    border-color: #000;
+}
+
+/* Definição das Cores */
+.cor-preto { background-color: #000; }
+.cor-branco { background-color: #fff; }
+.cor-bege { background-color: #f5f5dc; }
+.cor-marrom { background-color: #8b4513; }
+.cor-azul { background-color: #000080; }
+
+/* Destaque para quando a cor estiver selecionada (opcional) */
+.btn-cor.ativo {
+    border: 2px solid #ff69b4; /* Rosa da sua marca */
+}
+/* Bolinha dividida ao meio: 50% uma cor, 50% outra */
+.cor-preto-branco {
+    background: linear-gradient(45deg, #000 50%, #fff 50%);
+}
+
+.cor-azul-bege {
+    background: linear-gradient(45deg, #000080 50%, #f5f5dc 50%);
+}
+
+/* Exemplo de listrado ou estampa */
+.cor-estampado {
+    background: radial-gradient(circle, #ff69b4 20%, #fff 20%, #fff 40%, #ff69b4 40%);
+    background-size: 10px 10px;
+}
